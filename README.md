@@ -56,31 +56,8 @@ The pipeline processes the following healthcare datasets:
 
 # 🏗️ Pipeline Architecture
 
-```text
-               Raw CSV Files
-                     │
-                     ▼
-           Bronze Delta Tables
-                     │
-                     ▼
-           Silver Delta Tables
-                     │
-                     ▼
-           Incremental Loading
-                     │
-                     ▼
-            Delta Merge (Upsert)
-                     │
-                     ▼
-              Data Validation
-                     │
-                     ▼
-             Pipeline Logging
-                     │
-                     ▼
-          Databricks Workflow
-```
 
+<img src="screenshots/architecture.png" width="800">
 ---
 
 # 📁 Project Structure
@@ -207,31 +184,59 @@ Healthcare_Pharma_Data_Pipeline
 
 ## Workflow Execution
 
-> Add screenshot here
+<br>
+
+<img src="screenshots/workflow.png" width="800">
 
 ---
 
 ## Bronze Delta Tables
 
-> Add screenshot here
+<br>
+
+<img src="screenshots/bronze.png" width="800">
 
 ---
 
 ## Silver Delta Tables
 
-> Add screenshot here
+<br>
+
+<img src="screenshots/silver.png" width="800">
 
 ---
 
+## Incremental load
+
+<br>
+
+
+<img src="screenshots/incremental_load.png" width="800">
+
+
+---
+
+## Delta Merge 
+<br>
+
+<img src="screenshots/delta_merge.png" width="800">
+
+----
+
 ## Validation Results
 
-> Add screenshot here
+<br>
+
+<img src="screenshots/validation.png" width="800">
+
 
 ---
 
 ## Pipeline Logs
 
-> Add screenshot here
+<br>
+
+<img src="screenshots/logging.png" width="800">
 
 ---
 
