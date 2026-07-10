@@ -75,9 +75,6 @@ Healthcare_Pharma_Data_Pipeline
 │   ├── Notebook07_Validation
 │   └── Notebook08_Logging
 │
-├── configs
-│
-├── utils
 │
 ├── docs
 │
@@ -164,7 +161,72 @@ Healthcare_Pharma_Data_Pipeline
 - Store Execution Status
 - Maintain Pipeline Logs
 
+
 ---
+
+## 📊 Data Model
+
+
+### Bronze Layer
+
+| Table | Purpose |
+|--------|---------|
+| biotech_funding_bronze | Stores raw biotechnology funding data ingested from CSV files. |
+| clinical_trials_bronze | Stores raw clinical trial records from the source dataset. |
+| disease_burden_bronze | Stores raw disease burden statistics without transformation. |
+| drug_approvals_bronze | Stores raw drug approval records loaded from CSV files. |
+| pharma_companies_bronze | Stores raw pharmaceutical company financial data. |
+
+### Silver Layer
+
+| Table | Purpose |
+|--------|---------|
+| biotech_funding_silver | Stores cleaned and standardized biotechnology funding data. |
+| clinical_trials_silver | Stores validated and transformed clinical trial data. |
+| disease_burden_silver | Stores cleaned disease burden data for analytics. |
+| drug_approvals_silver | Stores standardized drug approval information. |
+| pharma_companies_silver | Stores cleaned financial data of pharmaceutical companies. |
+
+----
+
+## 📑 Key Columns
+
+### biotech_funding_silver
+
+| Column | Description |
+|---------|-------------|
+| deal_id | Unique identifier for each funding deal. |
+| company_name | Name of the biotechnology company. |
+| funding_amount | Funding amount received in USD. |
+| source_file | Source CSV filename. |
+| load_timestamp | Timestamp when the record was loaded into Delta Lake. |
+
+### clinical_trials_silver
+
+| Column | Description |
+|---------|-------------|
+| trial_id | Unique clinical trial identifier. |
+| sponsor | Organization sponsoring the clinical trial. |
+| phase | Clinical trial phase. |
+| status | Trial status. |
+| load_timestamp | Record ingestion timestamp. |
+
+----
+## 🎯 Learning Applied
+
+This project demonstrates the practical application of Data Engineering concepts learned through Databricks and PySpark.
+
+- Designed a Medallion Architecture using Bronze and Silver layers.
+- Loaded raw CSV datasets into Delta Lake tables using PySpark.
+- Performed data profiling and schema validation.
+- Implemented data cleaning and transformation using PySpark DataFrames.
+- Developed an Incremental Load process to ingest only new records.
+- Applied Delta MERGE (UPSERT) to update existing records and insert new records efficiently.
+- Validated processed data using row count, schema, and null value checks.
+- Implemented pipeline logging to monitor execution status, processing time, and row counts.
+- Managed data using Unity Catalog Volumes and Delta Tables.
+- Organized the ETL process into modular notebooks for better maintainability and scalability.
+----
 
 # 📊 Features
 
